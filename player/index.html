@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
   <title>Howler.js Audio Player</title>
-  <link rel="stylesheet" href="./styles.css?1=a">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css?nocache=a">
 </head>
 <body>
   <div style='position:fixed;top:0px;right:0px;'>
@@ -22,11 +23,11 @@
   <div class="controlsOuter">
     <div class="controlsInner">
       <div id="loading"></div>
-      <div class="btn" id="playBtn"></div>
-      <div class="btn" id="pauseBtn"></div>
-      <div class="btn" id="prevBtn"></div>
-      <div class="btn" id="nextBtn"></div>
-      <div class="btn" id="nextRandBtn"></div>
+      <div id="nextRandBtnHolder" class="btn"><div id="nextRandBtn" class="fas fa-random"></div></div>
+      <div id="prevBtnHolder" class="btn"><div id="prevBtn" class="fas fa-fast-backward"></div></div>
+      <div id="nextBtnHolder" class="btn"><div id="nextBtn" class="fas fa-fast-forward"></div></div>
+      <div id="playBtnHolder" class="btn"><div id="playBtn" class="fas fa-play"></div></div>
+      <div id="pauseBtnHolder" class="btn"><div id="pauseBtn" class="fas fa-pause"></div></div>
     </div>
     <div class="btn" id="playlistBtn"></div>
     <div class="btn" id="volumeBtn"></div>
@@ -53,6 +54,17 @@
   <!-- Scripts -->
   <script src="../src/howler.core.js"></script>
   <script src="./siriwave.js"></script>
-  <script src="./player.js"></script>
+  <script src="./jquery.js"></script>
+  <script src="./fitty.js"></script>
+  <script src="./player.js?nocache=a"></script>
+  <script>
+    $(window).on("load", function (e) {
+      fitty("#pauseBtn");
+      fitty("#playBtn");
+      fitty("#nextRandBtn");
+      fitty("#prevBtn");
+      fitty("#nextBtn");
+    });
+  </script>
 </body>
 </html>

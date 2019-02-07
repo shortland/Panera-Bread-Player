@@ -110,12 +110,14 @@ Player.prototype = {
 
     // Show the pause button.
     if (sound.state() === 'loaded') {
-      playBtn.style.display = 'none';
-      pauseBtn.style.display = 'block';
+      fitty(pauseBtn);
+      playBtnHolder.style.display = 'none';
+      pauseBtnHolder.style.display = 'block';
     } else {
+      fitty(pauseBtn);
       loading.style.display = 'block';
-      playBtn.style.display = 'none';
-      pauseBtn.style.display = 'none';
+      playBtnHolder.style.display = 'none';
+      pauseBtnHolder.style.display = 'block';
     }
 
     // Keep track of the index we are currently playing.
@@ -136,8 +138,8 @@ Player.prototype = {
     sound.pause();
 
     // Show the play button.
-    playBtn.style.display = 'block';
-    pauseBtn.style.display = 'none';
+    playBtnHolder.style.display = 'block';
+    pauseBtnHolder.style.display = 'none';
   },
 
   /**
@@ -273,19 +275,6 @@ Player.prototype = {
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
   }
 };
-
-// var player;
-// var xhttp = new XMLHttpRequest();
-// xhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     var songlist = JSON.parse(this.responseText);
-//     player = new Player(songlist);
-//   }
-// };
-// xhttp.open("GET", "randomizer.pl", true);
-// xhttp.send();
-
-//var player = new Player(songlist);
 
 // Setup our new audio player class and pass it the playlist.
 var player = new Player([
