@@ -244,12 +244,12 @@ Player.prototype = {
    */
   togglePlaylist: function() {
     var self = this;
-    var display = (playlist.style.display === 'block') ? 'none' : 'block';
+    // var display = (playlist.style.display === 'block') ? 'none' : 'block';
 
-    setTimeout(function() {
-      playlist.style.display = display;
-    }, (display === 'block') ? 0 : 500);
-    playlist.className = (display === 'block') ? 'fadein' : 'fadeout';
+    // setTimeout(function() {
+    //   playlist.style.display = display;
+    // }, (display === 'block') ? 0 : 500);
+    // playlist.className = (display === 'block') ? 'fadein' : 'fadeout';
   },
 
   /**

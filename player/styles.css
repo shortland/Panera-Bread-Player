@@ -25,15 +25,14 @@ body {
 
 /* Top Info */
 #title {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  top: 3%;
-  line-height: 34px;
-  height: 34px;
+  bottom: 70px;
+  left: 0px;
   text-align: center;
-  font-size: 34px;
   font-weight: 300;
   color: #fff;
+  max-height: 50px;
 }
 #timer {
   position: fixed;
@@ -60,7 +59,7 @@ body {
 
 /* Controls */
 .controlsOuter {
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(42, 42, 42);
   position: fixed;
   width: 100%;
   height: 70px;
@@ -71,8 +70,8 @@ body {
   position: absolute;
   width: 340px;
   height: 70px;
-  left: 70%;
-  margin: 0 -238px;
+  left: 50%;
+  margin: 0 -170px;
 }
 .btn {
   position: absolute;
@@ -236,15 +235,20 @@ body {
   }
 }
 
+#track {
+  max-height: 33px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
 /* Plylist */
 #playlist {
   width: 100%;
-  height: calc(100vh - 70px);
-  position: fixed;
+  height: calc(100vh - 105px);
+  position: absolute;
   top: 0px;
-  left: 0;
+  left: 0px;
   background-color: rgb(43, 41, 41);
-  display: none;
   overflow-y: scroll;
 }
 #list {
@@ -358,4 +362,13 @@ body {
 @-ms-keyframes fadeout {
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+
+.tempUpperControls {
+  width: 100%;
+  height: 34px;
+  position: fixed;
+  bottom:70px;
+  left: 0px;
+  background-color: rgb(62, 62, 62);
 }

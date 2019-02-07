@@ -5,7 +5,7 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
   <title>Howler.js Audio Player</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles.css?nocache=a">
+  <link rel="stylesheet" href="./styles.css?nocache=ab">
 </head>
 <body>
   <div style='position:fixed;top:0px;right:0px;'>
@@ -13,11 +13,12 @@
     <button type='button' onClick='chooseIt()'>Go</button>
   </div>
   <!-- Top Info -->
-  <div id="title">
-    <span id="track"></span>
-  </div>
+
 
   <div class="tempUpperControls">
+    <div id="title">
+      <span id="track"></span>
+    </div>
     <div id="timer">0:00</div>
     <div id="duration">0:00</div>
   </div>
@@ -58,7 +59,7 @@
   <script src="./siriwave.js"></script>
   <script src="./jquery.js"></script>
   <script src="./fitty.js"></script>
-  <script src="./player.js?nocache=a"></script>
+  <script src="./player.js?nocache=ab"></script>
   <script>
     $(window).on("load", function (e) {
       fitty("#pauseBtn");
@@ -67,6 +68,9 @@
       fitty("#prevBtn");
       fitty("#nextBtn");
       fitty("#playlistBtn");
+
+      var titleWidth = $(window).width() - ($("#timer").width() + $("#duration").width() + 50);
+      $("#track").animate({"width": titleWidth, "left": $("#timer").width()}, 10);
     });
   </script>
 </body>
