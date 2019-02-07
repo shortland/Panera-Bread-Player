@@ -21,15 +21,15 @@ elms.forEach(function(elm) {
  */
 var Player = function(playlist) {
   this.playlist = playlist;
-  this.index = 0;
+  var randomIndex = Math.floor(Math.random() * Math.floor(playlist.length));
+  this.index = randomIndex;
   this.counts = playlist.length;
 
   // Display the title of the first track.
-  track.innerHTML = (playlist[0].title).substring(0, (playlist[0].title).length - 4);
+  track.innerHTML = (playlist[randomIndex].title).substring(0, (playlist[randomIndex].title).length - 4);
 
   // Setup the playlist display.
   playlist.forEach(function(song) {
-    console.log(song);
     var div = document.createElement('div');
     div.className = 'list-song';
     div.innerHTML = (song.title).substring(0, (song.title).length - 4);
