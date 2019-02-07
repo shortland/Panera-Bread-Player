@@ -29,6 +29,7 @@ var Player = function(playlist) {
 
   // Setup the playlist display.
   playlist.forEach(function(song) {
+    console.log(song);
     var div = document.createElement('div');
     div.className = 'list-song';
     div.innerHTML = (song.title).substring(0, (song.title).length - 4);
@@ -111,10 +112,12 @@ Player.prototype = {
     // Show the pause button.
     if (sound.state() === 'loaded') {
       fitty(pauseBtn);
+      fitty(playBtn);
       playBtnHolder.style.display = 'none';
       pauseBtnHolder.style.display = 'block';
     } else {
       fitty(pauseBtn);
+      fitty(playBtn);
       loading.style.display = 'block';
       playBtnHolder.style.display = 'none';
       pauseBtnHolder.style.display = 'block';
@@ -122,7 +125,6 @@ Player.prototype = {
 
     // Keep track of the index we are currently playing.
     self.index = index;
-    //self.counts = counts;
   },
 
   /**
