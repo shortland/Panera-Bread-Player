@@ -27,6 +27,7 @@ var Player = function(playlist) {
 
   // Display the title of the first track.
   track.innerHTML = (playlist[randomIndex].title).substring(0, (playlist[randomIndex].title).length - 4);
+  document.getElementById("pageTitle").innerHTML = track.innerHTML;
 
   // Setup the playlist display.
   playlist.forEach(function(song) {
@@ -108,6 +109,7 @@ Player.prototype = {
 
     // Update the track display.
     track.innerHTML = (data.title).substring(0, (data.title).length - 4);
+    document.getElementById("pageTitle").innerHTML = track.innerHTML;
 
     // Show the pause button.
     if (sound.state() === 'loaded') {
