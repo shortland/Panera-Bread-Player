@@ -1,0 +1,3 @@
+Personal alternative ripoff of Spotify =)
+
+Shabby stuff just to get something working... 
